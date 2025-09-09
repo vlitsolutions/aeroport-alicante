@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Header } from '@/components/layout/Header';
@@ -16,7 +16,6 @@ export function Hero() {
   const [showResults, setShowResults] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
-  const [showSplitView, setShowSplitView] = useState(false);
   
   const handleSearch = (query: string, destination: Destination | null) => {
     setSearchQuery(query);

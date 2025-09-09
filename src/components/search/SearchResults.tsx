@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getDestinationName, type Destination } from '@/data/destinations';
-import { cn } from '@/lib/utils';
 
 interface SearchResultsProps {
   query: string;
@@ -16,7 +15,7 @@ interface SearchResultsProps {
   onDestinationSelect?: (destination: Destination) => void;
 }
 
-export function SearchResults({ query, destination, isVisible, onDestinationSelect }: SearchResultsProps) {
+export function SearchResults({ query, destination, isVisible }: SearchResultsProps) {
   const t = useTranslation();
   const { locale } = useLanguage();
   

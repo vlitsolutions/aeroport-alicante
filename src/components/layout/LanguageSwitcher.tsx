@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Globe } from 'lucide-react';
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useTranslation } from '@/hooks/useTranslation';
-import { locales, type Locale } from '@/lib/i18n';
+import { locales } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
 const languageNames = {
@@ -17,7 +16,6 @@ const languageNames = {
 
 export function LanguageSwitcher({ className }: { className?: string }) {
   const { locale, setLocale } = useLanguage();
-  const t = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   
   return (

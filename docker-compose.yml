@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: aeroport-alicante-app
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      - app-data:/app/.next
+
+volumes:
+  app-data:

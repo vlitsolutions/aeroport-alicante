@@ -2273,7 +2273,7 @@ export const destinations: Destination[] = [
   }
 ];
 
-export function getDestinationByName(name: string, locale: 'es' | 'en' | 'de' = 'es'): Destination | undefined {
+export function getDestinationByName(name: string): Destination | undefined {
   const searchName = name.toLowerCase().trim();
   
   return destinations.find(dest => {
@@ -2288,7 +2288,7 @@ export function getDestinationByName(name: string, locale: 'es' | 'en' | 'de' = 
   });
 }
 
-export function searchDestinations(query: string, locale: 'es' | 'en' | 'de' = 'es'): Destination[] {
+export function searchDestinations(query: string): Destination[] {
   if (!query || query.length < 2) return destinations.slice(0, 8);
   
   const searchQuery = query.toLowerCase().trim();

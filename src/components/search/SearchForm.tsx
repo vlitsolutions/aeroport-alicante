@@ -7,9 +7,6 @@ import * as z from 'zod';
 import { Search, MapPin, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useTranslation } from '@/hooks/useTranslation';
 import { searchDestinations, getDestinationName, type Destination } from '@/data/destinations';
 import { cn } from '@/lib/utils';
 
@@ -26,7 +23,6 @@ interface SearchFormProps {
 }
 
 export function SearchForm({ onSearch, onFocus, onDestinationSelect }: SearchFormProps) {
-  const t = useTranslation();
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   
@@ -183,7 +179,7 @@ export function SearchForm({ onSearch, onFocus, onDestinationSelect }: SearchFor
             
             <div className="border-t border-white/20 p-2 sm:p-3 bg-brand-50/50">
               <p className="text-xs sm:text-sm text-neutral-600 text-center">
-                Can't find your destination? <span className="text-brand-600 font-medium">Contact us</span> for custom quotes
+                Can&apos;t find your destination? <span className="text-brand-600 font-medium">Contact us</span> for custom quotes
               </p>
             </div>
           </motion.div>
