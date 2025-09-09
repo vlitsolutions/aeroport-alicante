@@ -1,14 +1,10 @@
-version: '3.8'
-
 services:
-  app:
-    build: .
-    container_name: aeroport-alicante-app
+  aeroport-alicante:
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
     restart: unless-stopped
-    volumes:
-      - app-data:/app/.next
-
-volumes:
-  app-data:
+    container_name: aeroport-alicante-app
