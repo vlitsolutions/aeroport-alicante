@@ -8,3 +8,5 @@ services:
       - NEXT_TELEMETRY_DISABLED=1
     restart: unless-stopped
     container_name: aeroport-alicante-app
+    ports:
+      - "7878:3000"
