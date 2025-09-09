@@ -46,7 +46,7 @@ export function SearchResults({ query, destination, isVisible }: SearchResultsPr
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="w-full max-w-2xl mx-auto mt-8"
+        className="w-full max-w-2xl mx-auto mt-6 sm:mt-8 lg:mt-12"
       >
         <div className="card-warm p-8 shadow-warm border-2 border-brand-200/50">
           <div className="text-center">
@@ -88,7 +88,7 @@ export function SearchResults({ query, destination, isVisible }: SearchResultsPr
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="w-full max-w-3xl mx-auto px-2 sm:px-4 lg:px-0"
+      className="w-full max-w-3xl mx-auto px-2 sm:px-4 lg:px-0 mt-6 sm:mt-8 lg:mt-12"
     >
       <div className="card-warm shadow-warm border-2 border-brand-200/50 overflow-hidden">
         <div className="bg-gradient-primary text-white p-3 sm:p-6">

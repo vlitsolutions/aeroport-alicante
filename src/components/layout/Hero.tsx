@@ -126,7 +126,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="mt-4"
+                    className="mt-6 sm:mt-8"
                   >
                     <SearchResults 
                       query={searchQuery}
@@ -224,7 +224,7 @@ export function Hero() {
               </div>
             ) : (
               <div className="flex flex-col items-center w-full max-w-4xl px-8">
-                <div className="w-full mb-6">
+                <div className="w-full mb-8">
                   <SearchForm 
                     onSearch={handleSearch}
                     onFocus={handleSearchFocus}
@@ -239,7 +239,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="w-full"
+                    className="w-full mt-4"
                     style={{ marginBottom: '100px' }} // Prevent overlay with scroll indicator
                   >
                     <SearchResults 

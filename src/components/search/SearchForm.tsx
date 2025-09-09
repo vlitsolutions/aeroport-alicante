@@ -62,6 +62,25 @@ export function SearchForm({ onSearch, onFocus, onDestinationSelect }: SearchFor
     setValue('destination', value);
     setIsOpen(value.length >= 2);
   };
+
+  const handleInputFocus = () => {
+    setIsOpen(query.length >= 2);
+    onFocus?.(true);
+    
+    // On mobile, scroll input into view with animation
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        const input = document.querySelector('input[placeholder*="Where to"]');
+        if (input) {
+          input.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest'
+          });
+        }
+      }, 100);
+    }
+  };
   
   return (
     <motion.div 
@@ -93,10 +112,7 @@ export function SearchForm({ onSearch, onFocus, onDestinationSelect }: SearchFor
                   "w-full px-3 py-3 pl-10 pr-3 sm:px-4 sm:py-4 sm:pl-12 sm:pr-4 md:px-6 md:py-5 md:pl-16 md:pr-6 bg-white/90 border-2 border-brand-200/60 rounded-lg sm:rounded-xl md:rounded-2xl text-sm sm:text-base md:text-lg font-medium text-brand-900 placeholder:text-brand-500 placeholder:text-sm sm:placeholder:text-base focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-brand-400 focus:bg-white transition-all duration-300 backdrop-blur-sm shadow-brand",
                   errors.destination && "ring-2 ring-red-400 focus:ring-red-400 border-red-300"
                 )}
-                onFocus={() => {
-                  setIsOpen(query.length >= 2);
-                  onFocus?.(true);
-                }}
+                onFocus={handleInputFocus}
                 onBlur={() => {
                   // Delay to allow suggestion clicks to register
                   setTimeout(() => {
